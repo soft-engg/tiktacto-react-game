@@ -31,6 +31,7 @@ function Tictacto() {
             })
         }
     }
+
     //function to get the marked box 
     function getBox(no) {
         return boxes[no] === "X" ? <p className="p1mark">{boxes[no]}</p> : <p className="p2mark">{boxes[no]}</p>
@@ -106,7 +107,11 @@ function Tictacto() {
 
     }
 
-
+    function getboxdiv(id) {
+        return <div onClick={event => { markbox(event.target.id) }} id={id}>
+            {getBox(id)}
+        </div>
+    }
     //method player1 wins 
     function player1Wins() {
         setWinner("player1")
@@ -136,19 +141,20 @@ function Tictacto() {
             <h1 className="title">Tic<span>tac</span>to</h1>
             <h3>player <span>{player === true ? "one" : "two"}</span>  turn </h3>
             <div className="outer_div">
-                <div onClick={event => { markbox(event.target.id) }} id="0">{getBox(0)}</div>
-                <div onClick={event => { markbox(event.target.id) }} id="1">{getBox(1)}</div>
-                <div onClick={event => { markbox(event.target.id) }} id="2">{getBox(2)}</div>
+
+                {getboxdiv(0)}
+                {getboxdiv(1)}
+                {getboxdiv(2)}
             </div>
             <div className="outer_div">
-                <div onClick={event => { markbox(event.target.id) }} id="3">{getBox(3)}</div>
-                <div onClick={event => { markbox(event.target.id) }} id="4">{getBox(4)}</div>
-                <div onClick={event => { markbox(event.target.id) }} id="5">{getBox(5)}</div>
+                {getboxdiv(3)}
+                {getboxdiv(4)}
+                {getboxdiv(5)}
             </div>
             <div className="outer_div">
-                <div onClick={event => { markbox(event.target.id) }} id="6">{getBox(6)}</div>
-                <div onClick={event => { markbox(event.target.id) }} id="7">{getBox(7)}</div>
-                <div onClick={event => { markbox(event.target.id) }} id="8">{getBox(8)}</div>
+                {getboxdiv(6)}
+                {getboxdiv(7)}
+                {getboxdiv(8)}
             </div >
             <button onClick={reset}>New game</button>
 
