@@ -1,6 +1,6 @@
 .top_most {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -51,7 +51,7 @@
 }
 
 .outer_div {
-    width: 300px;
+    width: 240px;
     display: flex;
 }
 

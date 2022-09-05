@@ -20,6 +20,6 @@ jobs:
       - name: deploying th project
         env:
           VERCEL-ORG-ID: Puftuwa0uYmE2hkmNgUmCaja
-          VERCEL-PROJECT-ID: prj_gdoKBHfnIB3XwlhMKveWq6Al77OX  
+          VERCEL-PROJECT-ID: prj_IjO56cFsj1J3ANI7VXd938pEa5Vg  
         run: npm run deploy
       
