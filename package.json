@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "cd build && vc --prod --token=sXp2ahY4jzyj5VGGta4s8oun",
+    "deploy": "vc --prod --token=sXp2ahY4jzyj5VGGta4s8oun",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
