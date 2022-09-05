@@ -133,7 +133,7 @@ function Tictacto() {
     //this is the main return call
     return <div className="top_most">
         <div className="result_div">
-            <h1 className="first_victories">Wins <span>{vCount[0]}</span></h1>
+            <p className="first_victories">Wins <span>{vCount[0]}</span></p>
             {winner === "player1" ? <h1 className="p1result">player 1 Won</h1> : <h2 className="p1result"></h2>}
             {winner === "draw" ? <h1 className="p1result">draw : No win</h1> : <h1 className="p1result"></h1>}
         </div>
