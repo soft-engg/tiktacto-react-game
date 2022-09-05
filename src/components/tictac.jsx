@@ -138,7 +138,7 @@ function Tictacto() {
             {winner === "draw" ? <p className="p1result">draw : No win</p> : <p className="p1result"></p>}
         </div>
         <div className="parent_div">
-            <p className="title">Tic<span>tac</span>to</p>
+            <p className="title">Tic<span>Tac</span>To</p>
             <h3>player <span>{player === true ? "one" : "two"}</span>  turn </h3>
             <div className="outer_div">
 
