@@ -1,12 +1,14 @@
-name: deploment file
+name: my first github action
 on: [push]
 jobs:
   build-app:
     runs-on: ubuntu-latest
     steps:
-       - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-      -run: node -v
+        with:
+          node-version: 16
       - run: npm install
       - name: building our project
         run: npm run build
+      
