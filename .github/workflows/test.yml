@@ -11,12 +11,12 @@ jobs:
       - run: npm install
       - name: building our project
         run: npm run build
-      - run: |
-          cd build 
-          mkdir .vercel
-          touch project.json
-          echo '{"projectId":"prj_gdoKBHfnIB3XwlhMKveWq6Al77OX" 
-          , "orgId":"Puftuwa0uYmE2hkmNgUmCaja" }' > project.json
+      # - run: |
+      #     cd build 
+      #     mkdir .vercel
+      #     touch project.json
+      #     echo '{"projectId":"prj_gdoKBHfnIB3XwlhMKveWq6Al77OX" 
+      #     , "orgId":"Puftuwa0uYmE2hkmNgUmCaja" }' > project.json
       - name: deploying th project
         env:
           VERCEL-ORG-ID: Puftuwa0uYmE2hkmNgUmCaja
