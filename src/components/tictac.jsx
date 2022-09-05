@@ -134,11 +134,11 @@ function Tictacto() {
     return <div className="top_most">
         <div className="result_div">
             <p className="first_victories">Wins <span>{vCount[0]}</span></p>
-            {winner === "player1" ? <h1 className="p1result">player 1 Won</h1> : <h2 className="p1result"></h2>}
-            {winner === "draw" ? <h1 className="p1result">draw : No win</h1> : <h1 className="p1result"></h1>}
+            {winner === "player1" ? <p className="p1result">player 1 Won</p> : <p className="p1result"></p>}
+            {winner === "draw" ? <p className="p1result">draw : No win</p> : <p className="p1result"></p>}
         </div>
         <div className="parent_div">
-            <h1 className="title">Tic<span>tac</span>to</h1>
+            <p className="title">Tic<span>tac</span>to</p>
             <h3>player <span>{player === true ? "one" : "two"}</span>  turn </h3>
             <div className="outer_div">
 
@@ -160,9 +160,9 @@ function Tictacto() {
 
         </div >
         <div className="result_div">
-            <h1 className="second_victories">Wins <span>{vCount[1]}</span></h1>
-            {winner === "player2" ? <h1 className="p2result">player 2 Won</h1> : <h2 className="p2result"></h2>}
-            {winner === "draw" ? <h1 className="p2result">draw :no win</h1> : <h1 className="p2result"></h1>}
+            <p className="second_victories">Wins <span>{vCount[1]}</span></p>
+            {winner === "player2" ? <p className="p2result">player 2 Won</p> : <p className="p2result"></p>}
+            {winner === "draw" ? <p className="p2result">draw :no win</p> : <p className="p2result"></p>}
         </div>
     </div>
 
