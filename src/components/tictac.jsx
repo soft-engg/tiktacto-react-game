@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import "../style/tictacstyle.css"
 function Tictacto() {
     //use for countiing the victoris of both parties  
@@ -65,7 +65,7 @@ function Tictacto() {
             else if (boxes[2] === "X" && boxes[4] === "X" && boxes[6] === "X") {
                 setWinner("player1")
             }
-            else if (counter == 8 && winner === "") {
+            else if (counter === 8 && winner === "") {
                 setWinner("draw")
                 setTimeout(() => reset(), 2000)
             }
