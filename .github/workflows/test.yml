@@ -13,7 +13,7 @@ jobs:
         run: npm run build
       - run: |
           cd build 
-          mkfir .vercel
+          mkdir .vercel
           touch project.json
           echo '{"projectId":"prj_gdoKBHfnIB3XwlhMKveWq6Al77OX" 
           , "orgId":"Puftuwa0uYmE2hkmNgUmCaja" }' > project.json
