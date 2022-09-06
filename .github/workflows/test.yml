@@ -20,8 +20,8 @@ jobs:
           mkdir .vercel
           cd .vercel
           touch project.json
-          echo '{"projectId":"prj_IjO56cFsj1J3ANI7VXd938pEa5Vg" 
-          , "orgId":"Puftuwa0uYmE2hkmNgUmCaja" }' > project.json
+          echo '{"projectId":"$VERCEL_PROJECT_ID" 
+          , "orgId":"VERCEL_ORG_ID" }' > project.json
       - name: deploying th project  
         run: npm run deploy
       
