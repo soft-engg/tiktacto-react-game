@@ -136,16 +136,16 @@ function Tictacto() {
     return <div className=" flex min-h-screen bg-gray-900   ">
         {/* The title */}
        
-        <div className="flex flex-col flex-shrink invisible sm:visible  w-2/6 justify-center items-center">
-            <p className="text-gray-300 text-2xl font-bold">Wins <span className="text-4xl text-green-600">{vCount[0]}</span></p>
-            {winner === "player1" ? <p className="text-green-600 font-bold text-lg h-6">player 1 Won</p> : <p className="h-10"></p>}
-            {winner === "draw" ? <p className="text-gray-300 font-bold text-lg h-6">draw : No win</p> : <p className="h-10"></p>}
+        <div className="flex flex-col flex-shrink invisible sm:visible  w-2/6 justify-center items-center h-screen">
+            <p className="text-gray-300 text-2xl font-bold h-10">Wins <span className="text-4xl text-green-600">{vCount[0]}</span></p>
+            {winner === "player1" ? <p className="text-green-600 font-bold text-lg h-10">player 1 Won</p> : <p className="h-10"></p>}
+            {winner === "draw" ? <p className="text-gray-300 font-bold text-lg h-10">draw : No win</p> : <p className="h-10"></p>}
         </div>
 
         <div className="w-4/6 flex flex-col items-center sm:justify-center ">
                  {/* herer is score board for small screen  */}
               {/* The title */}
-            <p className="text-green-600 text-4xl font-bold tracking-wide sm:hidden my-5">
+            <p className="text-green-600 text-6xl font-bold tracking-wide sm:hidden my-5">
                 Tic<span className="text-rose-600">Tac</span>To</p>
             <div className=" flex justify-around visible sm:hidden w-screen  h-30">
                 <div className="flex flex-col flex-shrink   w-2/6  items-center">
@@ -189,8 +189,8 @@ function Tictacto() {
 
         <div className="flex flex-col flex-shrink invisible sm:visible w-2/6 justify-center items-center">
             <p className="text-gray-300 text-2xl font-bold ">Wins <span className="text-4xl text-red-600">{vCount[1]}</span></p>
-            {winner === "player2" ? <p className="text-red-600 font-bold text-lg h-6">player 2 Won</p> : <p className="h-10"></p>}
-            {winner === "draw" ? <p className="text-gray-300 font-bold text-lg h-6">draw :no win</p> : <p className="h-10"></p>}
+            {winner === "player2" ? <p className="text-red-600 font-bold text-lg h-10">player 2 Won</p> : <p className="h-10"></p>}
+            {winner === "draw" ? <p className="text-gray-300 font-bold text-lg h-10">draw :no win</p> : <p className="h-10"></p>}
         </div>
     </div>
 
