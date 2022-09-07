@@ -1,7 +1,6 @@
 import React, {  useState } from "react";
-import "../style/tictacstyle.css"
 function Tictacto() {
-    //use for countiing the victoris of both parties  
+    //use for counting the victories of both parties  
     const [vCount, setvCount] = useState([0, 0])
     //use to count the marks of both player 
     const [counter, setcounter] = useState(0)
@@ -14,6 +13,8 @@ function Tictacto() {
 
     //a function to mark the boxes according to player 
     function markbox(id) {
+        console.log("the box is called with id " ,id)
+        console.log(boxes)
         if (boxes[id] === "") {
             setcounter(oldvalue => oldvalue + 1)
             setBoxes(old => {
@@ -34,7 +35,8 @@ function Tictacto() {
 
     //function to get the marked box 
     function getBox(no) {
-        return boxes[no] === "X" ? <p className="p1mark">{boxes[no]}</p> : <p className="p2mark">{boxes[no]}</p>
+        return boxes[no] === "X" ? <p className="w-20 h-20 border-2 border-green-600/60  text-4xl flex justify-center items-center font-bold text-green-600">{boxes[no]}</p> 
+        : <p className="w-20 h-20 border-2 border-green-600/60  text-4xl flex justify-center items-center font-bold text-red-600">{boxes[no]}</p>
     }
     //function for checking the wining player
     function check() {
@@ -108,7 +110,8 @@ function Tictacto() {
     }
 
     function getboxdiv(id) {
-        return <div onClick={event => { markbox(event.target.id) }} id={id}>
+      
+        return <div  onClick={event => { markbox(id)}} id={id}>
             {getBox(id)}
         </div>
     }
@@ -130,39 +133,48 @@ function Tictacto() {
         setplayer(true)
         setcounter(0)
     }
+
     //this is the main return call
-    return <div className="top_most">
-        <div className="result_div">
-            <p className="first_victories">Wins <span>{vCount[0]}</span></p>
-            {winner === "player1" ? <p className="p1result">player 1 Won</p> : <p className="p1result"></p>}
-            {winner === "draw" ? <p className="p1result">draw : No win</p> : <p className="p1result"></p>}
+    return <div className=" flex min-h-screen bg-gray-900   ">
+        <div className="flex flex-col flex-shrink  w-2/6 justify-center items-center">
+            <p className="text-gray-300 text-2xl font-bold">Wins <span className="text-4xl text-green-600">{vCount[0]}</span></p>
+            {winner === "player1" ? <p className="text-green-600 font-bold text-lg h-6">player 1 Won</p> : <p className="p1result"></p>}
+            {winner === "draw" ? <p className="text-gray-300 font-bold text-lg h-6">draw : No win</p> : <p className="p1result"></p>}
         </div>
-        <div className="parent_div">
-            <p className="title">Tic<span>Tac</span>To</p>
-            <h3>player <span>{player === true ? "one" : "two"}</span>  turn </h3>
-            <div className="outer_div">
+
+        <div className="w-4/6 flex flex-col   items-center justify-center">
+            
+            <p className="text-green-600 text-4xl font-bold tracking-wide ">Tic
+            
+            <span className="text-rose-600">Tac</span>To</p>
+            
+            <h3 className="text-xl text-red-600">player <span className="text-2xl font-bold text-green-600">{player === true ? "one" : "two"}</span>  turn </h3>
+            
+            <div className="flex w-3/4 justify-center mt-1">
 
                 {getboxdiv(0)}
                 {getboxdiv(1)}
                 {getboxdiv(2)}
             </div>
-            <div className="outer_div">
+            <div className="flex w-3/4 justify-center   ">
                 {getboxdiv(3)}
                 {getboxdiv(4)}
                 {getboxdiv(5)}
             </div>
-            <div className="outer_div">
+            <div className="flex w-3/4 justify-center  mb-2">
                 {getboxdiv(6)}
                 {getboxdiv(7)}
                 {getboxdiv(8)}
             </div >
-            <button onClick={reset}>New game</button>
+            <button onClick={reset} className="border-red-600 text-green-600 font-bold border-2 px-2 py-1 rounded-md  bg-gray-900/70">New game</button>
 
         </div >
-        <div className="result_div">
-            <p className="second_victories">Wins <span>{vCount[1]}</span></p>
-            {winner === "player2" ? <p className="p2result">player 2 Won</p> : <p className="p2result"></p>}
-            {winner === "draw" ? <p className="p2result">draw :no win</p> : <p className="p2result"></p>}
+
+
+        <div className="flex flex-col flex-shrink   w-2/6 justify-center items-center">
+            <p className="text-gray-300 text-2xl font-bold ">Wins <span className="text-4xl text-red-600">{vCount[1]}</span></p>
+            {winner === "player2" ? <p className="text-red-600 font-bold text-lg h-6">player 2 Won</p> : <p className="p2result"></p>}
+            {winner === "draw" ? <p className="text-gray-300 font-bold text-lg h-6">draw :no win</p> : <p className="p2result"></p>}
         </div>
     </div>
 
