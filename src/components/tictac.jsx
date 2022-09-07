@@ -13,9 +13,7 @@ function Tictacto() {
 
     //a function to mark the boxes according to player 
     function markbox(id) {
-        console.log("the box is called with id " ,id)
-        console.log(boxes)
-        if (boxes[id] === "") {
+        if (boxes[id] === ""&&winner==="") {
             setcounter(oldvalue => oldvalue + 1)
             setBoxes(old => {
                 if (player === true) {
@@ -23,7 +21,7 @@ function Tictacto() {
                     setplayer(!player)
                     check();
                 }
-                else {
+                else if (player === false ){
                     old[id] = "O"
                     setplayer(!player)
                     check();
@@ -119,13 +117,13 @@ function Tictacto() {
     function player1Wins() {
         setWinner("player1")
         setvCount(pVcount => [pVcount[0] + 1, pVcount[1]])
-        setTimeout(() => reset(), 2000)
+        setTimeout(() => reset(), 1000)
     }
     //method when player 2 wins 
     function player2Wins() {
         setWinner("player2")
         setvCount(pVcount => [pVcount[0], pVcount[1] + 1])
-        setTimeout(() => reset(), 2000)
+        setTimeout(() => reset(), 1000)
     }
     function reset() {
         setBoxes(["", "", "", "", "", "", "", "", ""])
@@ -136,15 +134,33 @@ function Tictacto() {
 
     //this is the main return call
     return <div className=" flex min-h-screen bg-gray-900   ">
-        <div className="flex flex-col flex-shrink  w-2/6 justify-center items-center">
+        {/* The title */}
+       
+        <div className="flex flex-col flex-shrink invisible sm:visible  w-2/6 justify-center items-center">
             <p className="text-gray-300 text-2xl font-bold">Wins <span className="text-4xl text-green-600">{vCount[0]}</span></p>
-            {winner === "player1" ? <p className="text-green-600 font-bold text-lg h-6">player 1 Won</p> : <p className="p1result"></p>}
-            {winner === "draw" ? <p className="text-gray-300 font-bold text-lg h-6">draw : No win</p> : <p className="p1result"></p>}
+            {winner === "player1" ? <p className="text-green-600 font-bold text-lg h-6">player 1 Won</p> : <p className="h-10"></p>}
+            {winner === "draw" ? <p className="text-gray-300 font-bold text-lg h-6">draw : No win</p> : <p className="h-10"></p>}
         </div>
 
-        <div className="w-4/6 flex flex-col   items-center justify-center">
-            
-            <p className="text-green-600 text-4xl font-bold tracking-wide ">Tic
+        <div className="w-4/6 flex flex-col items-center sm:justify-center ">
+                 {/* herer is score board for small screen  */}
+              {/* The title */}
+            <p className="text-green-600 text-4xl font-bold tracking-wide sm:hidden my-5">
+                Tic<span className="text-rose-600">Tac</span>To</p>
+            <div className=" flex justify-around visible sm:hidden w-screen  h-30">
+                <div className="flex flex-col flex-shrink   w-2/6  items-center">
+                    <p className="text-gray-300 text-2xl font-bold h-10">Wins <span className="text-4xl text-green-600 ">{vCount[0]}</span></p>
+                    {winner === "player1" ? <p className="text-green-600 font-bold text-lg h-10">player 1 Won</p> : <p className="h-10"></p>}
+                    {winner === "draw" ? <p className="text-gray-300 font-bold text-lg h-10">draw : No win</p> : <p className="h-10"></p>}
+                </div> 
+                <div className="flex flex-col flex-shrink   w-2/6  items-center">
+                    <p className="text-gray-300 text-2xl font-bold ">Wins <span className="text-4xl text-red-600">{vCount[1]}</span></p>
+                    {winner === "player2" ? <p className="text-red-600 font-bold text-lg h-6">player 2 Won</p> : <p className="p2result"></p>}
+                    {winner === "draw" ? <p className="text-gray-300 font-bold text-lg h-6">draw :no win</p> : <p className="p2result"></p>}
+                </div>
+            </div>
+            {/* The title */}
+            <p className="text-green-600 text-4xl font-bold tracking-wide invisible sm:visible">Tic
             
             <span className="text-rose-600">Tac</span>To</p>
             
@@ -171,10 +187,10 @@ function Tictacto() {
         </div >
 
 
-        <div className="flex flex-col flex-shrink   w-2/6 justify-center items-center">
+        <div className="flex flex-col flex-shrink invisible sm:visible w-2/6 justify-center items-center">
             <p className="text-gray-300 text-2xl font-bold ">Wins <span className="text-4xl text-red-600">{vCount[1]}</span></p>
-            {winner === "player2" ? <p className="text-red-600 font-bold text-lg h-6">player 2 Won</p> : <p className="p2result"></p>}
-            {winner === "draw" ? <p className="text-gray-300 font-bold text-lg h-6">draw :no win</p> : <p className="p2result"></p>}
+            {winner === "player2" ? <p className="text-red-600 font-bold text-lg h-6">player 2 Won</p> : <p className="h-10"></p>}
+            {winner === "draw" ? <p className="text-gray-300 font-bold text-lg h-6">draw :no win</p> : <p className="h-10"></p>}
         </div>
     </div>
 
